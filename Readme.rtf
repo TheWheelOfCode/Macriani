@@ -1,0 +1,119 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Please read these instructions first before asking for help.\
+\
+Here\'92s how you get the sound pack up and running for you. The tt.tin file might also help you with any other muds you play and is not associated with Miriani. Rather it is my global, used for all muds, tt file.\
+And without further ado\'85\
+\
+Make sure You have Xcode installed before executing these steps.\
+\
+Step 1: Install Homebrew\
+Go into terminal and type:\
+\
+ruby -e " $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install) " \
+\
+Step 2: install tt++\
+\
+brew install tintin\
+\
+Step 3: Install Sox\
+brew install sox --with-libvorbis\
+\
+Step 4: Make a "games" folder in your home directory, and put everything in this route directory in that folder.\
+\
+Step 5. Run the game\
+\
+Go into terminal and type:\
+\
+tt++ games/tt.tin\
+That will start up Tintin and load my global scripts for all muds.\
+\
+Step 6. Connect to a game\
+\
+Due to the tt.tin file that you should have already loaded and that Miriani is already set up for you, you just need to type \'93connect Miriani\'94, without the quotes.\
+If you want to add other worlds, type \'93add world without the quotes.  (Going to work on a blank .tin file being created in the worlds/world name-world url folder that is created upon world creation via the terminal client).\
+If you want to delete a world: delete world name. (Going to make it so that the folder to which the world belongs is deleted too, or maybe where you are given a prompt as to what you want done with it.)\
+If you want to see your world list, just type \'93connect\'94. \
+And now, here\'92s a modified piece of the file taken from the old branch of this pack.\
+\
+### Soundpack Contents:\
+The folder contains 3 subfolders:\
+backups - Where a backup of an unmodified "data.tin" and "miriani.tin" file\
+reside.\
+logs - where your logs go when you start to log, in the format of\
+Year-month-day.txt.\
+sounds - where *all* the packs sounds live. This is where you can swap/replace\
+sounds if you so wish.\
+There are at this time, also 4 files there. \
+data.tin - the game's stored data from session to session such as volume and\
+other variables.\
+miriani.tin - the main data file for the game written by me.\
+README - this file\
+user.tin - a file saved for any user specific work they wish to add. This file\
+will never be updated by me.\
+If you wish to add your own custom triggers and such, please use the file\
+"user.tin" as I will not be updating that, so it should never be overwritten. I\
+would also suggest putting a copy of user.tin in the backups foer as well each\
+time you modify it, deleting the previous version.\
+\
+Remember, this soundpack is a work in progress, and this release is not a final\
+product of any type. I work on this in my spare time, when I can, and will push\
+updates if bugs are reported, or requests made, at early as possible. I can't\
+promise updates and such will be available instantly. Thank you for\
+understanding.\
+\
+### Command help:\
+There are a few commands, be they aliases, macros, or hot key combinations I have\
+included, and will put in more at a later point as well as work progresses. I\
+will also be adding a file that can be called up in game, for soundpack help\
+detailing the same, at a later point.\
+\
+## Function keys:\
+There is a list of commands associated with the Function keys (F1 to F12). They\
+are as follows currently:\
+F2 - Combat Focus: \
+Toggles between on or off. When on you will see the coords\
+followed by the ship when you type focus instead of ship then coords.\
+F3 - Combat Scanning:\
+Togles between on and off. When on, all you see during a scan is the ship,\
+followed by the coords underneath. Use the following keys to access all other\
+information:\
+#Macros - Keys used together:\
+control + h - hull damage\
+control + k _component damage\
+control + o - occupants\
+control + u - distance\
+#aliases - type, then hit enter:\
+ses -show enemy ship, ship name, and alliance\
+swe - weapon state\
+spo - powere state\
+sca - cargo\
+F9 - Volume status:\
+Shows the current volume. Shows in the format of 0.x signifying a percentage.\
+Example 0.20 would be at 20 percent volume. You can go above 1.0 (100 percent)\
+but I wouldn't advise it. I also wouldn't advise goign or trying to go below\
+0.0 (0 percent), as that might break something on your system, and I am not responsible for\
+that.\
+F10 - Mute/unmute:\
+Toggles soundpack state - muted or unmuted. Simple enough.\
+F11 - Volume down:\
+Lowers the volume by 0.05, or 5 percent. Again, I am not responsible if you\
+attempt to lower it below 0.0 or 0 percent.\
+F12 - Volume up:\
+Raises the volume by 0.05, or 5 percent. Again, I am not responsible if you\
+raise it above 100 percent.\
+\
+F4 to F8 will eventually be used for background sound control. I plan on\
+eventually background looping most,if not the entire game. F9 may aso be changed\
+at a later point, as calling your volume isn't all that importan, and can be\
+aliased instead, saving macro keys for more important use.\
+\
+## Other functions:\
+There are a few other functions to explain hereas well.\
+Option F11-F12: switches muds that you might be playing. For Miriani\'92s convenience, I\'92ve made a MIRI alias so that if you\'92re snooping Miriani from another mud, you can type mIRI command instead of #Miriani command.\
+Also, make sure you have the Oliver voice installed.}

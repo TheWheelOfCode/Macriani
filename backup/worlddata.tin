@@ -1,0 +1,5 @@
+#CLASS {worlddata} OPEN
+
+#VARIABLE         {worldlist}  {{miriani}{{host}{toastsoft.net}{name}{miriani}{port}{1234}}}
+
+#CLASS {worlddata} CLOSE
