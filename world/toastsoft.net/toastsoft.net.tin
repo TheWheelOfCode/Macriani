@@ -594,17 +594,16 @@ mplay General/Comm/Alliance.ogg
 #showme $orgshort %1, "%2";
 #line gag;
 mplay General/Comm/org.ogg}
-#action {[Short-range Communication]%1} 
+#action {[Short-range Communication] %1} 
 {
 mplay General/Comm/short.ogg
 }
 #action {[Tradesman Market] %1} 
 { mplay general/comm/tradesman.ogg
 }
-#action {[General Communication] %1 transmits, %2} 
+#action {[General Communication]%1} 
 {
 mplay General/Comm/General.ogg;
-#showme {[General] %1 transmits, %2};
 #line gag
 }
 #action {You activate %1 metafrequency %2 tuned to %3.}
