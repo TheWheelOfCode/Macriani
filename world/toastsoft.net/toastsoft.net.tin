@@ -669,7 +669,7 @@ mplay Ship/Comm/PA@intmath{1d9}.ogg;
 }
 #action {^%1 {say|says|ask|asks|exclaim|exclaims}, "%2"$} 
 {
-mplay general/Socials/say.wav;
+mplay General/Socials/say.wav;
 #showme %1, "%2";
 #line gag
 }
