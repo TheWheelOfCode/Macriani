@@ -1566,7 +1566,9 @@ mplay Ship/Computer/Keyboard@intmath{1d15}.ogg
 }
 #action {A destination appears on the ship's navigation controls:%1} 
 {
-mplay Ship/Computer/Keyboard@intmath{1d15}.ogg
+mplay Ship/Computer/Keyboard@intmath{1d15}.ogg;
+#showme {%1};
+#line gag
 }
 #action {Starship Status:} 
 {
