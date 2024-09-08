@@ -1721,7 +1721,7 @@ mplay Ship/Misc/NewMail@intmath{1d2}.ogg
 }
 #action {You feel a mild vibration as the starship's asteroid anchor buries itself into the asteroid's surface.} 
 {
-mplay general/asteroid/anchorstart.ogg;
+mplay General/Asteroid/anchorstart.ogg;
 #line gag
 }
 #action {%1Lifting anchor and establishing standard dock%2} 
