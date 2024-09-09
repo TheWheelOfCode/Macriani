@@ -30,7 +30,7 @@ mplay Music/@intmath{1d64}.ogg
 }
 #action {#$#soundpack status ok}
 {
-mplay general/misc/uptodate.mp3;
+mplay General/Misc/uptodate.mp3;
 #showme Your sound pack is up-to-date.;
 #line gag
 }
