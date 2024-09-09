@@ -44,8 +44,8 @@ mplay general/misc/prompt.ogg
 {
 mplay general/misc/prompt.ogg
 }
-#action {[Type a line of input or `@abort' to abort the command.]} {
-mplay general/misc/prompt.ogg
+#action {[Type a line of input or '@abort' to abort the command.]} {
+mplay General/Misc/prompt.ogg
 }
 #gag {You see nothing special.}
 #sub  {Directions from %1 to %2: %3.} {%3}
