@@ -651,7 +651,7 @@ mplay Ship/Comm/PA@intmath{1d9}.ogg;
 }
 #action {%1 {say|says}, "%2" into a small microphone mounted on the wall.} 
 {
-mplay Ship/Comm/pa@intmath{1d9}.ogg
+mplay Ship/Comm/pa@intmath{1d9}.ogg;
 #showme {%1, %2};
 #line gag
 }
@@ -809,7 +809,7 @@ mplay General/Misc/Buckle@intmath{1d3}.ogg
 }
 #action {Those coordinates are occupied by this {starship|ship}.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {Praelor %1: %2, %3, %4}
 {
@@ -830,51 +830,51 @@ mplay General/Misc/Cancel.ogg
 #sub {Current coordinates: %1} {%1}
 #action {The {ship|starship} is already moving.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {The ship must be on autopilot mode.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {Wait %1.}
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {The starship must be on autopilot mode.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {The ship must be in MANUAL mode.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {The starship must be in MANUAL mode.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {The ship is already on autopilot.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {The ship is already on manual navigation.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {Those coordinates are too far away to establish a lock.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {Invalid coordinates. Range: (1, 1, 1) to (20, 15, 10).} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {Invalid selection.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {You elect to discontinue searching.} 
 {
-mplay General/Misc/Cancel.ogg
+mplay General/Misc/cancel.ogg
 }
 #action {You can't go that way.} 
 {
@@ -1237,7 +1237,7 @@ mplay ship/misc/BlastDoorClose@intmath{1d3}.ogg;
 #action {%1  "debris destroyed."} 
 {
 mplay Ship/Combat/DebrisDestroyed.ogg;
-#math {debkills} {$debkills + 1}
+#math {debkills} {$debkills + 1};
 #line gag}
 #action {%1 announces, "target destroyed."} 
 {
