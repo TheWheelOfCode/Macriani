@@ -574,7 +574,7 @@ mplay General/Comm/Unmute.wav;
 {
 mplay General/Comm/Chatter.ogg
 }
-#action {%*[ %1 shatter%*immersion and {ask|asks|says|say}, %2} 
+#action {^[ %1 {shatter|shatters} immersion and {ask|asks|says|say}, "%2" ]$} 
 {
 mplay General/Comm/rooc.wav;
 #showme %1, "%2";
