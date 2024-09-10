@@ -1541,7 +1541,12 @@ mplay Ship/Computer/announce@intmath{1d10}.ogg;
 #showme {%1 "%2"};
 #line gag
 }
-#sub {%* the starship is headed for %1 (%2). The computer estimates approximately %3 until arrival at the destination at current relativity speed.} {%3 until arrival at %1, (%2)}
+#action {%* the starship is headed for %1 (%2). The computer estimates approximately %3 until arrival at the destination at current relativity speed.}
+{
+mplay Ship/Computer/report@intmath{1d4}.ogg;
+#showme {%3 until arrival at %1, (%2)};
+#line gag
+}
 #action {The computer announces, %2} 
 {
 mplay Ship/Computer/Announce@intmath{1d10}.ogg;
