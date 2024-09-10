@@ -38,11 +38,11 @@ mplay General/Misc/uptodate.mp3;
 #sub {%s %1 %s} { %1 }
 #action {Enter your selection:} 
 {
-mplay general/misc/prompt.ogg
+mplay General/Misc/prompt.ogg
 }
 #action {[%*Enter "yes" or "no"]} 
 {
-mplay general/misc/prompt.ogg
+mplay General/Misc/prompt.ogg
 }
 #action {[Type a line of input or '@abort' to abort the command.]} {
 mplay General/Misc/prompt.ogg
@@ -51,7 +51,7 @@ mplay General/Misc/prompt.ogg
 #sub  {Directions from %1 to %2: %3.} {%3}
 #action {%*#$#hjelp} 
 {
-mplay general/misc/beep10.ogg;
+mplay General/Misc/beep10.ogg;
 #line gag
 }
 #NOP archaeology
@@ -59,7 +59,7 @@ mplay general/misc/beep10.ogg;
 {
 #if {$ArtiCoords == %5} 
 {
-mplay general/archaeology/artifacthere.ogg;
+mplay General/Archaeology/artifacthere.ogg;
 #unvar ArtiCoords};#var {OldArtiCoords} {%5}
 }
 #sub {[%1; %2 Site %3] (%4) (%5) (%6 environment)}
@@ -73,33 +73,33 @@ mplay general/archaeology/artifacthere.ogg;
 {
 #if {$ArtiCoords == %4} 
 {
-mplay general/archaeology/artifacthere.ogg;
+mplay General/Archaeology/artifacthere.ogg;
 #unvar ArtiCoords};
 #var {OldArtiCoords} {%4}
 }
 #action {You press a small button on the side of a level %1 archaeological dig site scanner and begin directing it toward several likely locations.} 
 {
-mplay general/archaeology/scanstart.ogg;
-mplay general/archaeology/scanner@intmath{1d4}.ogg;
+mplay General/Archaeology/scanstart.ogg;
+mplay General/Archaeology/scanner@intmath{1d4}.ogg;
 #line gag
 }
 #action {%*A level %1 archaeological dig site scanner indicates that you should move to (%2).} 
 {
 #var {ArtiCoords} {%2};
 #showme $OldArtiCoords to $ArtiCoords;
-mplay general/archaeology/artifactNear.ogg;
+mplay General/Archaeology/artifactNear.ogg;
 #line gag
 }
 #action {A level %1 archaeological dig site scanner indicates that there is an artifact buried approximately %2 feet beneath the surface.} 
 {
 #variable {artidepth} {%2};
-mplay general/archaeology/artifacthere.ogg;
+mplay General/Archaeology/artifacthere.ogg;
 #showme {%2};
 #line gag
 } 
 #action {You thrust a small shovel into the ground and begin methodically removing large chunks of dirt.} 
 {
-mplay general/archaeology/shovel@intmath{1d14}.ogg;
+mplay General/Archaeology/shovel@intmath{1d14}.ogg;
 #math {artidepth} {$artidepth -0.5};
 #showme $artidepth;
 #line gag
@@ -116,7 +116,7 @@ mplay General/Archaeology/Brush@intmath{1d8}.ogg;
 }
 #action {You firmly wedge a sleek metallic digging apparatus into the ground and press a trigger on the handle. The attached shovel immediately goes to work, sending debris %1} 
 {
-mplay general/archaeology/shovel@math{1d14}.ogg;
+mplay General/Archaeology/shovel@math{1d14}.ogg;
 #math {artidepth} {$artidepth -2};
 #showme $artidepth;
 #line gag
@@ -129,56 +129,56 @@ and quickly retrieve it.
 } {
 #var {artidepth} {0};
 #var {articoords} {0};
-mplay general/archaeology/ArtifactGet.wav
+mplay General/Archaeology/artifactget.wav
 }
 #action {The hud on a %1diving helmet flashes alarmingly, indicating the oxygen supply has dropped below %2} 
 {
-mplay general/archaeology/alert1.wav
+mplay General/ Archaeology/alert1.wav
 }
 #action {%*A plump red insect burrows deeper into the dirt as {a|an} %1 comes near.} 
 {
-mplay general/archaeology/random@math{1d9}.wav;
+mplay General/Archaeology/random@math{1d9}.wav;
 #line gag
 }
 #action {%*A large insect with a rather prominent stinger whizzes by.} 
 {
-mplay general/archaeology/random6.wav;
+mplay General/Archaeology/random6.wav;
 #line gag
 }
 #action {%*You suddenly feel more skilled in Archaeology!
 }
 {
-mplay general/archaeology/practice.wav
+mplay General/Archaeology/practice.wav
 }
 #action {%*A level %1 archaeological dig site scanner reports nothing nearby.} 
 {
 #showme Nothing nearby.;
-mplay general/archaeology/NothingFound.ogg;
+mplay General/Archaeology/NothingFound.ogg;
 #line gag
 }
 #action {%*Your integrated buoyancy compensator draws oxygen from %1 oxygen {cylinder|tank} and you slowly begin to descend.} 
 {
-mplay general/archaeology/AirReleaseShort.wav;
+mplay General/Archaeology/airreleaseshort.wav;
 #line gag
 }
 #action {%*Your integrated buoyancy compensator vents air from its containment chamber
 into the surrounding water and you slowly begin to rise.} 
 {
-mplay general/archaeology/AirReleaseShort.wav;
+mplay General/Archaeology/airreleaseshort.wav;
 #line gag}
 #action {You swim {up|down|north|south|east|west|northeast|northwest|southeast|southwest}} 
 {
-mplay general/archaeology/underwater.wav;
+mplay General/Archaeology/underwater.wav;
 #line gag
 }
 #action {You gently slide %1 into a %2 archaeological artifact
 storage container.}
 {
-mplay general/container/arch.ogg
+mplay General/Container/arch.ogg
 }
 #action {A level %1 archaeological dig site scanner reports that there is an %2.}
 {
-mplay general/archaeology/ArtifactNear.ogg;
+mplay General/Archaeology/artifactnear.ogg;
 #showme %2;
 #line gag
 }
