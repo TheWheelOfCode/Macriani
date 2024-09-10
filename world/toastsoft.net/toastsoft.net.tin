@@ -21,12 +21,12 @@ mplay Music/@intmath{1d64}.ogg
 #gag {^$}
 #action {*** Connected ***}
 {
-#showme {Thank you for using the Macriani soundpack for Tintin++ created and maintained by Beatrice Carmichael.};
-#showme {Any questions, comments, or suggestions, please contact Beatrice via her lore ID of "Beatrice" or via the OOC/soundpacks message board.};
+#showme {Thank you for using the Macriani soundpack for Tintin++ created and maintained by Amber Kerrigan and Zara Khosravi.};
+#showme {Any questions, comments, or suggestions, please contact the maintainers on metafrequency 119.84 or via the OOC/Soundpacks message board. Alternatively, submit an issue or PR on GitHub!};
 #line gag}
 #action {#$#mcp version: 2.1 to: 2.1}
 {#line gag;
-\#$#register_soundpack macriani | 2.0
+\#$#register_soundpack macriani | 2.2
 }
 #action {#$#soundpack status ok}
 {
@@ -36,10 +36,7 @@ mplay General/Misc/uptodate.mp3;
 }
 #NOP aliases and macros
 #sub {%s %1 %s} { %1 }
-#action {Enter your selection:} 
-{
-mplay General/Misc/prompt.ogg
-}
+#gag {Enter your selection:} 
 #action {[%*Enter "yes" or "no"]} 
 {
 mplay General/Misc/prompt.ogg
