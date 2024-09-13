@@ -17,7 +17,6 @@ mplay Music/@intmath{1d64}.ogg
 #read games/world/toastsoft.net/miriani.tin;
 #read games/world/toastsoft.net/mvariables.tin
 }
-#config {command echo} off
 #gag {^$}
 #action {*** Connected ***}
 {
@@ -25,7 +24,8 @@ mplay Music/@intmath{1d64}.ogg
 #showme {Any questions, comments, or suggestions, please contact the maintainers on metafrequency 119.84 or via the OOC/Soundpacks message board. Alternatively, submit an issue or PR on GitHub!};
 #line gag}
 #action {#$#mcp version: 2.1 to: 2.1}
-{#line gag;
+{
+#line gag;
 \#$#register_soundpack macriani | 2.2
 }
 #action {#$#soundpack status ok}
@@ -162,7 +162,8 @@ mplay General/Archaeology/airreleaseshort.wav;
 into the surrounding water and you slowly begin to rise.} 
 {
 mplay General/Archaeology/airreleaseshort.wav;
-#line gag}
+#line gag
+}
 #action {You swim {up|down|north|south|east|west|northeast|northwest|southeast|southwest}} 
 {
 mplay General/Archaeology/underwater.wav;
@@ -212,63 +213,62 @@ mplay General/Asteroid/KitRetrieve.ogg;
 #line gag
 }
 
-
 #NOP atmo salvaging
 #gag {You are suddenly pressed against your seat as the vehicle is catapulted out of the docking bay.} 
 #gag {"Vehicle catapult active. Prepare for extreme acceleration."}
 #action {You carefully pilot the vehicle into a small chamber above the docking bay.}
 {
-mplay general/Atmo/SalvageLaunch.wav;
+mplay General/Atmo/salvagelaunch.wav;
 #line gag
 } 
 #action {You feel the pull of acceleration as the ship begins ascending through the planet's atmosphere.} 
 {
-mplay general/Atmo/salvagemove.wav;
+mplay General/Atmo/salvagemove.wav;
 #line gag
 }
 #action {The ship comes to a halt in the planet's atmosphere.}
 {
-mplay general/Atmo/salvagestop.wav;
+mplay General/Atmo/salvagestop.wav;
 #line gag
 }
 #action {The vehicle manages to break free from the pocket of wind and stabilize its course.}
 {
-mplay general/Atmo/salvagestop.wav;
+mplay General/Atmo/salvagestop.wav;
 #line gag
 }
 #action {The pull of acceleration eases off as the ship ceases its ascent.} 
 {
-mplay general/Atmo/salvagestop.wav;
+mplay General/Atmo/salvagestop.wav;
 #line gag
 }
 #action {You feel the pull of acceleration as the ship begins descending through the planet's atmosphere.} 
 {
-mplay general/atmo/salvagemove.wav;
+mplay General/Atmo/salvagemove.wav;
 #line gag
 }
 #action {The pull of acceleration eases off as the ship ceases its descent.} 
 {
-mplay general/atmo/salvagestop.wav;
+mplay General/Atmo/salvagestop.wav;
 #line gag
 }
 #action {You feel the pull of acceleration as the craft navigates through the atmosphere.} 
 {
-mplay general/atmo/salvagemove.wav;
+mplay General/Atmo/salvagemove.wav;
 #line gag
 }
 #action {The pull of acceleration eases off as the craft completes its maneuvering.} 
 {
-mplay general/atmo/salvagestop.wav;
+mplay General/Atmo/salvagestop.wav;
 #line gag
 }
 #action {You hear the sounds of the atmospheric scoop activating.} 
 {
-mplay general/atmo/salvagescoop.wav;
+mplay General/Atmo/salvagescoop.wav;
 #line gag
 }
 #action {%1 "Warning, avian lifeform in processing chamber. Expelling..."} 
 {
-mplay general/atmo/SalvageLifeform@intmath{1d2}.wav;
+mplay General/Atmo/salvagelifeform@intmath{1d2}.wav;
 #line gag
 }
 #action {%1You open the hatch of %2 and climb inside%3} 
@@ -283,7 +283,7 @@ mplay Ship/Misc/salvageexit.ogg;
 }
 #action {You hear a sharp whine as the vehicle accelerates through the%1} 
 {
-mplay general/atmo/SalvageDescent.wav;
+mplay General/Atmo/salvagedescent.wav;
 #line gag
 }
 #action {The vehicle carefully maneuvers into the docking bay.}
@@ -293,12 +293,12 @@ mplay General/Misc/SalvagerReturns.wav;
 }
 #action {You hear a gentle thud as the salvager sets down in the docking bay.}
 {
-mplay General/Misc/SalvagerLands.wav;
+mplay General/Misc/salvagerands.wav;
 #line gag
 }
 #action {A gust of atmospheric wind suddenly buffets the ship%1} 
 {
-mplay Ship/Misc/WindGust@intmath{1d2}.wav;
+mplay Ship/Misc/windgust@intmath{1d2}.wav;
 #line gag
 }
 #action {The vehicle suddenly hits a pocket of fierce wind%1} 
@@ -310,69 +310,69 @@ mplay Ship/Misc/Wind.wav;
 #NOP camera feed
 #action {^(%1) %2.} 
 {
-mplay General/Device/CameraFeed.wav;
+mplay General/Device/camerafeed.wav;
 #showme {%2};
 #line gag
 }
 #action {(%1;%2) %3.}
 {
-mplay General/Device/CameraFeed.wav;
+mplay General/Device/camerafeed.wav;
 #showme {%3};
 #line gag
 }
 #action {From your droid's camera, you see...}
 {
-mplay General/Device/CameraFeed.wav;
+mplay General/Device/camerafeed.wav;
 #line gag
 }
 #action {(%1) You notice a bright flash of light%2a starship must be coming in%3} 
 {
-mplay General/Device/CameraFeed.wav;
-mplay Ship/Move/OtherLanding@intmath{1d3}.wav;
+mplay General/Device/camerafeed.wav;
+mplay Ship/Move/otherlanding@intmath{1d3}.wav;
 #line gag
 }
 #action {(%1) A loud clicking is followed by the clatter of an empty cartridge to the floor.} 
 {
-mplay General/Device/CameraFeed.wav;
-mplay empty.wav;
+mplay General/Device/camerafeed.wav;
+mplay General/Combat/empty.wav;
 #line gag
 }
 #action {(%1) A%2clicks oddly. It must be out of ammo.} 
 {
-mplay General/Device/CameraFeed.wav;
-mplay emptygun.wav
+mplay General/Device/camerafeed.wav;
+mplay General/Combat/empty.wav
 }
 #action {(%1) The shot hits %2's %3.} 
 {
-mplay General/Device/CameraFeed.wav;
-mplay General/Combat/OtherShot.wav
+mplay General/Device/camerafeed.wav;
+mplay General/Combat/O'othershot.wav
 }
 #action {(%1) The shot misses!} 
 {
-mplay General/Device/CameraFeed.wav;
-mplay General/Combat/ShotMisses.wav;
+mplay General/Device/camerafeed.wav;
+mplay General/Combat/shotmisses.wav;
 #line gag
 } 
 #action {^(%1) (%2) %3} 
 {
-mplay General/Device/CameraFeed.wav;
+mplay General/Device/camerafeed.wav;
 #showme {%3};
 #line gag
 }
 #action {[From Outside] %1} 
 {
-mplay General/Device/CameraFeed.wav;
+mplay General/Device/camerafeed.wav;
 #showme {%1};
 #line gag
 }
 #action {[From Outside] You notice a bright flash of light%1a starship must be coming in%2}
 {
-mplay Ship/Move/OtherLanding@intmath{1d3}.wav;
+mplay Ship/Move/otherlanding@intmath{1d3}.wav;
 #line gag
 }
 #action {[From Outside] A loud clicking is followed by the clatter of an empty cartridge to the floor.}
 {
-mplay empty.wav
+mplay General/Combat/empty.wav
 }
 #action {[From Outside] %1clicks oddly. It must be out of ammo.}
 {
@@ -1309,7 +1309,7 @@ mplay ship/combat/altlaser@intmath{1d15}.wav;
 #action {
 {Turret|Turrets} %1 locking onto empty space.}
 {
-mplay general/misc/error.ogg
+mplay General/Misc/error.ogg
 }
 #action {%*"I have completed the repair of %1."}
 {
@@ -1326,7 +1326,7 @@ mplay Ship/Computer/Announce@intmath{1d10}.ogg;
 #math {BardCount} {$BardCount - $CannonCount};
 #if {$BardCount <= 0} 
 {
-mplay music/watched.wav};
+mplay Music/watched.wav};
 #showme {"Firing on %2."};
 #line gag
 }
