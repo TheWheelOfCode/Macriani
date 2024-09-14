@@ -1,0 +1,105 @@
+#!/bin/bash
+
+# Warning message and prompt for confirmation
+echo "WARNING: This script may make unwanted system modifications."
+echo "It is recommended that you first read the README.rtf file for manual installation instructions."
+echo "If you are sure you want to proceed, please type 'install' to confirm."
+
+# Read user input for confirmation
+read -r user_input
+
+# Check if the user typed "install"
+if [ "$user_input" != "install" ]; then
+    echo "Installation aborted. Please read the README.rtf file for more information."
+    exit 1
+fi
+
+# Detect OS type
+OS=$(uname -s)
+
+# Functions to install for each OS
+install_on_mac() {
+    echo "Installing dependencies for macOS..."
+    
+    # Ensure Xcode is installed
+    if ! xcode-select -p &>/dev/null; then
+        echo "Xcode not detected. Installing Xcode..."
+        xcode-select --install
+        echo "Please complete the Xcode installation and re-run this script."
+        exit 1
+    else
+        echo "Xcode is already installed."
+    fi
+
+    # Install Homebrew if it's not installed
+    if ! command -v brew &>/dev/null; then
+        echo "Homebrew not detected. Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    else
+        echo "Homebrew is already installed."
+    fi
+
+    # Install Tintin++ and Sox with Homebrew
+    brew install tintin
+    brew install sox --with-libvorbis
+}
+
+install_on_ubuntu_or_debian() {
+    echo "Installing dependencies for Ubuntu/Debian..."
+
+    # Install Tintin++, Sox, and dependencies
+    sudo apt update
+    sudo apt install -y tintin++ sox libsox-fmt-all
+}
+
+install_on_arch() {
+    echo "Installing dependencies for Arch Linux..."
+
+    # Install Tintin++, Sox, and dependencies
+    sudo pacman -Syu --noconfirm
+    sudo pacman -S --noconfirm tintin++ sox
+}
+
+# Install based on detected OS
+case "$OS" in
+    Darwin)
+        install_on_mac
+        ;;
+    Linux)
+        if [ -f /etc/debian_version ]; then
+            install_on_ubuntu_or_debian
+        elif [ -f /etc/arch-release ]; then
+            install_on_arch
+        else
+            echo "Unsupported Linux distribution. Please use Ubuntu, Debian, or Arch."
+            exit 1
+        fi
+        ;;
+    *)
+        echo "Unsupported OS: $OS"
+        exit 1
+        ;;
+esac
+
+# Step 4: Automatically copy all files to the "games" folder in the home directory
+GAMES_DIR="$HOME/games"
+
+# Check if the "games" folder exists
+if [ -d "$GAMES_DIR" ]; then
+    echo "The 'games' folder already exists in your home directory. Skipping file copy."
+else
+    echo "Creating 'games' folder in your home directory..."
+    mkdir -p "$GAMES_DIR"
+    echo "Copying all files to $GAMES_DIR..."
+    cp -r ./* "$GAMES_DIR"
+    echo "Files copied successfully!"
+fi
+
+# Step 5: Instructions for running the game
+echo "You can run the game by typing 'tt++ games/tt.tin' in your terminal."
+
+# Step 6: Instructions for connecting to the game
+echo "To connect to Miriani, type 'connect Miriani' after starting the game."
+
+# Install finished
+echo "Installation is complete. You can now use the soundpack!"
