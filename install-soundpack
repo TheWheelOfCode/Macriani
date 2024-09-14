@@ -39,7 +39,7 @@ install_on_mac() {
         echo "Homebrew is already installed."
     fi
 
-    # Install Tintin++ and Sox with Homebrew
+    # Install Tintin++ and Sox with Homebrew (no longer using --with-libvorbis)
     brew install tintin
     brew install sox
 }
@@ -60,6 +60,14 @@ install_on_arch() {
     sudo pacman -S --noconfirm tintin++ sox
 }
 
+install_on_termux() {
+    echo "Installing dependencies for Termux (Android)..."
+
+    # Install Tintin++ and Sox using Termux's package manager
+    pkg update
+    pkg install -y tintin sox
+}
+
 # Install based on detected OS
 case "$OS" in
     Darwin)
@@ -70,8 +78,10 @@ case "$OS" in
             install_on_ubuntu_or_debian
         elif [ -f /etc/arch-release ]; then
             install_on_arch
+        elif [ -n "$PREFIX" ] && [ -x "$(command -v termux-info)" ]; then
+            install_on_termux
         else
-            echo "Unsupported Linux distribution. Please use Ubuntu, Debian, or Arch."
+            echo "Unsupported Linux distribution. Please use Ubuntu, Debian, Arch, or Termux."
             exit 1
         fi
         ;;
