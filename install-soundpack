@@ -41,7 +41,7 @@ install_on_mac() {
 
     # Install Tintin++ and Sox with Homebrew
     brew install tintin
-    brew install sox --with-libvorbis
+    brew install sox
 }
 
 install_on_ubuntu_or_debian() {
